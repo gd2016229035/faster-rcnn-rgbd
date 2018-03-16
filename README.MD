@@ -4,13 +4,8 @@
 
 This project is a RGBD Faster R-CNN implementation based on [Chen Yun's faster rcnn](https://github.com/chenyuntc/simple-faster-rcnn-pytorch) . It aims to:
 
-<<<<<<< HEAD
 - Easily transform the origin RGB Faster R-CNN to RGBD version which can easily run on NYUV2 dataset
 - Extract the feature from RGB and Depth images respectively and concat them at Conv5 layer followed by a NIN layer 
-=======
-- Simplify the code 
-- Easily transform the origin RGB Faster R-CNN to RGBD version which can easily run on NYUV2 dataset
->>>>>>> b43e1a358b5853ffb749ac931c9cd97a6dccf862
 - Be straightly transfer to other muti-modality dataset(such as RGB-infrared)
 
 
@@ -19,22 +14,14 @@ This project is a RGBD Faster R-CNN implementation based on [Chen Yun's faster r
 Evaluate on [NYU Depth V2 dataset](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html)
 VGG16 train on `trainval` and test on `test` split. 
 
-<<<<<<< HEAD
-**Note**: You can run code in the `$faster-rcnn-RGB/` folder to get the RGB or Depth result(As the first two rows in the following table) by simplythe change one line `#127` in `$data/voc_dataset.py` file.Training shows great randomness, you may need a bit of luck and more epoches of training to reach the highest mAP. However, it should be easy to surpass the lower bound. 
-=======
-**Note**: the training shows great randomness, you may need a bit of luck and more epoches of training to reach the highest mAP. However, it should be easy to surpass the lower bound. 
->>>>>>> b43e1a358b5853ffb749ac931c9cd97a6dccf862
+**Note**: You can run code in the `$faster-rcnn-RGB/` folder to get the RGB or Depth result(As the first two rows in the following table) by simplythe change one line `#127` in `$data/voc_dataset.py` file.Training shows great randomness, you may need a bit of luck and more epoches of training to reach the highest mAP. However, it should be easy to surpass the lower bound.
 
 |              Implementation              |     mAP     |
 | :--------------------------------------: | :---------: |
 | RGB(~4G) |    0.337    |
 | Depth(~4G)     | 0.348 |
-<<<<<<< HEAD
-| RGBD(~5G)  | 0.394 |
-=======
 | RGBD(concat at Conv5)(~5G)  | 0.394 |
 | RGBD(concat at fc7)(~6G) |   0.386    |
->>>>>>> b43e1a358b5853ffb749ac931c9cd97a6dccf862
 
 ## 3. Install dependencies
 
@@ -67,15 +54,9 @@ python3 -m visdom.server
 
 #### NYU Depth V2 dataset
 
-<<<<<<< HEAD
 1. Download the training, validation, test data from [Gupta 's dataset'](http://www.cs.berkeley.edu/~sgupta/eccv14/eccv14-data.tgz) or [the official website](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)
 
 2. Transform the format of origin dataset to the format of "Pascal VOC2007".You can refer to [Gupta's code](https://github.com/s-gupta/nyu-hooks)
-=======
-1. Download the training, validation, test data and 
-
-2. transform the origin dataset to "Pascal VOC2007" version
->>>>>>> b43e1a358b5853ffb749ac931c9cd97a6dccf862
 
 3. It should have this basic structure of 'nyuv2' folder
 
@@ -104,7 +85,6 @@ you may refer to `utils/config.py` for more argument.
 
 Some Key arguments:
 
-- `--caffe-pretrain=False`: use pretrain model from caffe or torchvision (Default: torchvison)
 - `--plot-every=n`: visualize prediction, loss etc every `n` batches.
 - `--env`: visdom env for visualization
 - `--voc_data_dir`: where the VOC data stored
